@@ -30,7 +30,8 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     align-content: space-around;
-    height: 100vh;
+    height: 200vh;
+    padding: 10px
   };
 }
 
@@ -329,8 +330,6 @@ footer {
 
 @media (max-width: 480px) {
   footer {
-    grid-row: 2/3;
-    margin: auto;
-    text-align: center
+    display: none;
   }
 }
