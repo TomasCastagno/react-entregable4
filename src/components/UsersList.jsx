@@ -29,7 +29,7 @@ const UsersList = ({ listUsers, deleteUser, userSelected, modalDelete, setModalD
             </span>
           </button>
 
-          <button id='delete' onClick={() => { setModalDelete(true) }}>
+          <button id='delete' onClick={() => setModalDelete(true)}>
             <span className="material-symbols-outlined">
               delete
             </span>
@@ -40,7 +40,7 @@ const UsersList = ({ listUsers, deleteUser, userSelected, modalDelete, setModalD
               <div className='modal'>
             <div>
               <h5>Do you want delete this user?</h5>
-              <button onClick={() => deleteUser(user.id)}>Confirm</button>
+              <button onClick={() => {deleteUser(user); console.log(user)}}>Confirm</button>
               <button onClick={() => setModalDelete(false)}>Cancel</button>
             </div>
             </div>)

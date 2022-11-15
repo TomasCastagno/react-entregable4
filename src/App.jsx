@@ -29,12 +29,11 @@ function App() {
   const [modalDelete, setModalDelete] = useState(false);
 
 
-  const deleteUser = (id) => {
-    axios.delete(`https://users-crud1.herokuapp.com/users/${id}/`)
+  const deleteUser = (user) => {
+    axios.delete(`https://users-crud1.herokuapp.com/users/${user.id}/`)
       .then(() => getListUsers());
     setModalDelete(false)
-  }
-    ;
+  };
 
   const [selected, setSelected] = useState(null);
 
