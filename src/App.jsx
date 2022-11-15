@@ -29,8 +29,8 @@ function App() {
   const [modalDelete, setModalDelete] = useState(false);
 
 
-  const deleteUser = (user) => {
-    axios.delete(`https://users-crud1.herokuapp.com/users/${user.id}/`)
+  const deleteUser = (id) => {
+    axios.delete(`https://users-crud1.herokuapp.com/users/${id}/`)
       .then(() => getListUsers());
     setModalDelete(false)
   };
@@ -48,6 +48,7 @@ function App() {
 
     setSelected(null)
   };
+
 
   return (
     <div className="App">

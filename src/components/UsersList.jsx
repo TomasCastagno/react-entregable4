@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const UsersList = ({ listUsers, deleteUser, userSelected, modalDelete, setModalDelete }) => {
 
-
+const [idSelect , setIdSelect ] = useState();
 
   return (
     <div className='container-list'>
@@ -24,12 +24,13 @@ const UsersList = ({ listUsers, deleteUser, userSelected, modalDelete, setModalD
           </h4>
 
           <button id='edit' onClick={() => userSelected(user)}>
-            <span className="material-symbols-outlined">
+           <a href="#form"> <span className="material-symbols-outlined">
               edit
             </span>
+          </a>
           </button>
 
-          <button id='delete' onClick={() => setModalDelete(true)}>
+          <button id='delete' onClick={() => {setModalDelete(true); setIdSelect(user.id)}}>
             <span className="material-symbols-outlined">
               delete
             </span>
@@ -40,7 +41,7 @@ const UsersList = ({ listUsers, deleteUser, userSelected, modalDelete, setModalD
               <div className='modal'>
             <div>
               <h5>Do you want delete this user?</h5>
-              <button onClick={() => {deleteUser(user); console.log(user)}}>Confirm</button>
+              <button onClick={() => {deleteUser(idSelect)}}>Confirm</button>
               <button onClick={() => setModalDelete(false)}>Cancel</button>
             </div>
             </div>)

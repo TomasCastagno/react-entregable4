@@ -58,7 +58,7 @@ const UsersForm = ({ newUser, selected, editedUser }) => {
   return (
     <>
 
-      <form action="" className='form-user' onSubmit={submit}>
+      <form action="" className='form-user' onSubmit={submit} id='form'>
         <h1>New User</h1>
         <div className='inputs inputs-name'>
           <label htmlFor="first_name">
